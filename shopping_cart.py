@@ -36,7 +36,32 @@ def to_usd(my_price):
     """
     return f"${my_price:,.2f}" #> $12,000.71
 
-
 # TODO: write some Python code here to produce the desired output
 
+selected_products = [] 
 
+import datetime
+now = datetime.datetime.now()
+#https://www.w3resource.com/python-exercises/python-basic-exercise-3.php
+
+while True:
+    selected_id = input("Please input a product id, or 'DONE': " )
+
+    if selected_id.upper() == "DONE":
+        break # break out of the while loop 
+    else:
+        #print("LOOKING UP PRODUCT", selected_id)
+        matching_products = [p for p in products if str(p["id"]) == str(selected_id)]
+        matching_product = matching_products[0] # this will trigger an IndexError if there are no matching products
+        selected_products.append(matching_product)
+        # continue the while loop
+        # code snipet from Slack channel to get started
+
+
+print('--------------------------------')
+print('Green Foods Grocery')
+print('WWW.GREEN-FOODS-GROCERY.COM')
+print('--------------------------------')
+print("CHECKOUT AT:", now.strftime("%Y-%m-%d %H:%M"))
+print('--------------------------------')
+print('SELECTED PRODUCTS:')
