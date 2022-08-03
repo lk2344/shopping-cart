@@ -83,9 +83,6 @@ subtotal = sum(values)
 print('--------------------------------')
 print('SUBTOTAL:',to_usd(subtotal))
 
-print('--------------------------------')
-print('SUBTOTAL:',to_usd(subtotal))
-
 tax = subtotal * 0.0875
 print('TAX:',to_usd(tax))
 
