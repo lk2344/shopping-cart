@@ -59,9 +59,21 @@ while True:
 
 
 print('--------------------------------')
-print('Green Foods Grocery')
+print('GREEN FOODS GROCERY')
 print('WWW.GREEN-FOODS-GROCERY.COM')
 print('--------------------------------')
 print("CHECKOUT AT:", now.strftime("%Y-%m-%d %H:%M"))
 print('--------------------------------')
 print('SELECTED PRODUCTS:')
+
+from collections import defaultdict
+collect = defaultdict(dict)
+
+for key in selected_products:
+    collect[key['name']] = key['price']
+
+x = (dict(collect))
+for key, value in x.items():
+    print(key,'(', to_usd(value),')') 
+# from my miderm challenge 2, question B
+
