@@ -88,3 +88,7 @@ print('TAX:',to_usd(tax))
 
 print('TOTAL:',to_usd(subtotal + tax))
 
+print('--------------------------------')
+print('THANKS FOR SHOPPING AT GREEN FOODS GROCERY')
+print('SEE YOU AGAIN SOON!')
+print('--------------------------------')
