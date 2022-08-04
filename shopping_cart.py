@@ -66,22 +66,12 @@ print("CHECKOUT AT:", now.strftime("%Y-%m-%d %H:%M"))
 print('--------------------------------')
 print('SELECTED PRODUCTS:')
 
-from collections import defaultdict
-collect = defaultdict(dict)
+for p in selected_products:
+    print(p['name'], "(",to_usd(p['price']),")")
 
-for key in selected_products:
-    collect[key['name']] = key['price']
-
-x = (dict(collect))
-for key, value in x.items():
-    print(key,'(', to_usd(value),')') 
-# from my miderm challenge 2, question B
-
-values = x.values()
-subtotal = sum(values)
-# https://tutorial.eyehunts.com/python/python-sum-dictionary-values-by-key-example-code/#:~:text=For%20example%2C%20if%20you%20want,the%20sum%20of%20the%20values.
 print('--------------------------------')
-print('SUBTOTAL:',to_usd(subtotal))
+subtotal = sum(item['price'] for item in selected_products)
+print("SUBTOTAL:", to_usd(subtotal))
 
 tax = subtotal * 0.0875
 print('TAX:',to_usd(tax))
